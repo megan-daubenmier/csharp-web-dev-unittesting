@@ -41,5 +41,15 @@ namespace CarNS
             Odometer += milesAbleToTravel;
         }
 
+        public void AddGas(double gas)
+        {
+            GasTankLevel += gas;
+
+            if(GasTankLevel > GasTankSize)
+            {
+                throw new ArgumentOutOfRangeException("Amount of gas in tank cannot exceed tank size."); 
+            }
+        }
+
     }
 }
